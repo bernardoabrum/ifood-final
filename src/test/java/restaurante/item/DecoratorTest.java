@@ -1,9 +1,7 @@
+package restaurante.item;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import restaurante.item.AdicionarIngrediente;
-import restaurante.item.IItem;
-import restaurante.item.Item;
-import restaurante.item.RemoverIngrediente;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,6 +20,8 @@ public class DecoratorTest {
     @Test
     void deveCriarItem() {
         assertEquals(20.0f, item.getPreco());
+        assertTrue(item.getAdicionarIngrediente().isEmpty());
+        assertTrue(item.getRemoverIngrediente().isEmpty());
     }
 
     @Test
