@@ -5,19 +5,28 @@ import java.util.List;
 public abstract class ItemDecorator implements IItem {
 
     private IItem item;
-//    public float preco;
 
     public ItemDecorator(IItem item) {
         this.item = item;
     }
 
-    public float getPreco() {
-        return item.getPreco();
+    public IItem getItem() {
+        return item;
     }
 
-    public abstract String getRemovidos();
+    public float getPreco() {
+        return getNovoPreco();
+    }
 
-    public String getRemoverIngrediente() {
-        return "Ingredientes pra remover: " + this.getRemovidos();
+    public abstract List<String> getAlterarItem();
+
+    public abstract float getNovoPreco();
+
+    public List<String> getRemoverIngrediente() {
+        return this.getAlterarItem();
+    }
+
+    public List<String> getAdicionarIngrediente() {
+        return this.getAlterarItem();
     }
 }
