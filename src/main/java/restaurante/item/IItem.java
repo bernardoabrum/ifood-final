@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface IItem {
     float getPreco();
-    List<String> getAdicionarIngrediente();
+
+//    List<String> getAdicionarIngrediente();
+
     String getRemoverIngrediente();
 }

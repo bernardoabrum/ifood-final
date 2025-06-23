@@ -3,7 +3,7 @@ package restaurante.item;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdicionarIngredientes extends ItemDecorator{
+public class AdicionarIngredientes extends ItemDecorator {
     private String ingrediente;
     private float precoAdicional;
 
@@ -19,7 +19,11 @@ public class AdicionarIngredientes extends ItemDecorator{
 
     public List<String> getAdicional() {
         List<String> adicionais = new ArrayList<>(super.getAdicionarIngrediente());
-        adicionais.add(String.valueOf(adicionais));
+        adicionais.add(ingrediente);
         return adicionais;
+    }
+
+    public String getRemovidos() {
+        return "";
     }
 }

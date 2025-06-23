@@ -3,29 +3,26 @@ package restaurante.item;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Item implements IItem{
+public class Item implements IItem {
     public float preco;
-    public List<String> adicional;
-    public String remover;
+    //    public List<String> adicional;
+    public String removido;
 
     public Item(float preco) {
         this.preco = preco;
-        this.adicional = new ArrayList<>();
-        this.remover = "";
+//        this.adicional = new ArrayList<>();
+        this.removido = "";
     }
 
-    @Override
     public float getPreco() {
         return preco;
     }
 
-    @Override
-    public List<String> getAdicionarIngrediente() {
-        return adicional;
-    }
+//    public List<String> getAdicionarIngrediente() {
+//        return adicional;
+//    }
 
-    @Override
     public String getRemoverIngrediente() {
-        return remover;
+        return removido;
     }
 }
