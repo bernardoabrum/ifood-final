@@ -5,7 +5,7 @@ import java.util.List;
 public interface IItem {
     float getPreco();
 
-    List<String> getAdicionarIngrediente();
+    List<String> getIngredienteAdicionado();
 
-    List<String> getRemoverIngrediente();
+    List<String> getIngredienteRemovido();
 }

@@ -5,12 +5,12 @@ import java.util.List;
 
 public class Item implements IItem {
     public float preco;
-    public List<String> adicional;
+    public List<String> adicionado;
     public List<String> removido;
 
     public Item(float preco) {
         this.preco = preco;
-        this.adicional = new ArrayList<>();
+        this.adicionado = new ArrayList<>();
         this.removido = new ArrayList<>();
     }
 
@@ -18,11 +18,11 @@ public class Item implements IItem {
         return preco;
     }
 
-    public List<String> getAdicionarIngrediente() {
-        return adicional;
+    public List<String> getIngredienteAdicionado() {
+        return adicionado;
     }
 
-    public List<String> getRemoverIngrediente() {
+    public List<String> getIngredienteRemovido() {
         return removido;
     }
 }

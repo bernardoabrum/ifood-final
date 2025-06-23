@@ -20,15 +20,15 @@ public class DecoratorTest {
     @Test
     void deveCriarItem() {
         assertEquals(20.0f, item.getPreco());
-        assertTrue(item.getAdicionarIngrediente().isEmpty());
-        assertTrue(item.getRemoverIngrediente().isEmpty());
+        assertTrue(item.getIngredienteAdicionado().isEmpty());
+        assertTrue(item.getIngredienteRemovido().isEmpty());
     }
 
     @Test
     void deveRemoverIngrediente() {
         List<String> ingredientes = Arrays.asList("Milho", "Alface");
         IItem novoItem = new RemoverIngrediente(item, ingredientes);
-        assertEquals(ingredientes, novoItem.getRemoverIngrediente());
+        assertEquals(ingredientes, novoItem.getIngredienteRemovido());
         assertEquals(20.0f, novoItem.getPreco());
     }
 
@@ -36,7 +36,7 @@ public class DecoratorTest {
     void deveAdicionarIngrediente() {
         List<String> ingredientes = Arrays.asList("Queijo", "Carbe");
         IItem novoItem = new AdicionarIngrediente(item, ingredientes);
-        assertEquals(ingredientes, novoItem.getAdicionarIngrediente());
+        assertEquals(ingredientes, novoItem.getIngredienteAdicionado());
         assertEquals(26.0f, novoItem.getPreco());
     }
 }

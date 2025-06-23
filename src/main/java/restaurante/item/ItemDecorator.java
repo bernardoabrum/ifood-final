@@ -22,11 +22,11 @@ public abstract class ItemDecorator implements IItem {
 
     public abstract float getNovoPreco();
 
-    public List<String> getRemoverIngrediente() {
+    public List<String> getIngredienteAdicionado() {
         return this.getAlterarItem();
     }
 
-    public List<String> getAdicionarIngrediente() {
+    public List<String> getIngredienteRemovido() {
         return this.getAlterarItem();
     }
 }
