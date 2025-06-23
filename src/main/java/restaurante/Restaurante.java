@@ -1,8 +1,26 @@
 package restaurante;
 
 import pedido.Pedido;
+import restaurante.avaliacao.IAvaliacao;
 
 public abstract class Restaurante {
+
+    protected IAvaliacao avaliacao;
+    protected float mediaValor;
+
+    public Restaurante(float mediaValor) {
+        this.mediaValor = mediaValor;
+    }
+
+    public void setAvaliacao(IAvaliacao avaliacao) {
+        this.avaliacao = avaliacao;
+    }
+
+    public void setMediaValor(float mediaValor) {
+        this.mediaValor = mediaValor;
+    }
+
+    public abstract float calcularMediaValor();
 
     public abstract boolean aceitarPedido(Pedido pedido);
 

@@ -4,6 +4,14 @@ import pedido.Pedido;
 
 public class RestauranteB extends Restaurante {
 
+    public RestauranteB(float mediaValor) {
+        super(mediaValor);
+    }
+
+    public float calcularMediaValor() {
+        return this.mediaValor * (1 + this.avaliacao.porcentagemAumento());
+    }
+
     public boolean aceitarPedido(Pedido pedido) {
         return pedido.aceitarPedido();
     }
@@ -24,7 +32,5 @@ public class RestauranteB extends Restaurante {
         return pedido.entregarPedido();
     }
 
-    public boolean cancelarPedido(Pedido pedido) {
-        return pedido.cancelarPedido();
-    }
+    public boolean cancelarPedido(Pedido pedido) { return pedido.cancelarPedido(); }
 }
