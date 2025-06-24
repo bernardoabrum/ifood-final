@@ -13,7 +13,7 @@ public class ObserverTest {
 
     @BeforeEach
     public void setUp() {
-        cliente = new Cliente("Renzo");
+        cliente = new ClienteComum("Renzo");
         pedido = cliente.fazerPedido("A");
     }
 

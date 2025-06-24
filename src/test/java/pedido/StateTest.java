@@ -1,6 +1,7 @@
 package pedido;
 
 import cliente.Cliente;
+import cliente.ClienteComum;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +13,7 @@ public class StateTest {
 
     @BeforeEach
     public void setUp() {
-        Cliente cliente = new Cliente("Renzo");
+        Cliente cliente = new ClienteComum("Renzo");
         pedido = cliente.fazerPedido("A");
     }
 
