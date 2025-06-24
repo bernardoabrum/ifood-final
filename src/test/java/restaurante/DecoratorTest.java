@@ -1,7 +1,11 @@
-package restaurante.item;
+package restaurante;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import restaurante.item.AdicionarIngrediente;
+import restaurante.item.IItem;
+import restaurante.item.Item;
+import restaurante.item.RemoverIngrediente;
 
 import java.util.Arrays;
 import java.util.List;
