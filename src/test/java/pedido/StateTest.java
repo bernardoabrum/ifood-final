@@ -6,6 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import restaurante.Restaurante;
 import restaurante.RestauranteFactory;
+import restaurante.item.Item;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,12 +17,17 @@ public class StateTest {
 
     private Pedido pedido;
     Restaurante restauranteA;
+    List<Item> listaItens;
 
     @BeforeEach
     public void setUp() {
+        Item item1 = new Item("Hamburguer", 30.00f);
+        Item item2 = new Item("Refrigerante", 10.00f);
+        Item item3 = new Item("Refrigerante", 10.00f);
+        listaItens = Arrays.asList(item1, item2, item3);
         restauranteA = RestauranteFactory.obterRestaurante("A"); restauranteA = RestauranteFactory.obterRestaurante("A");
         Cliente cliente = new ClienteComum("Renzo");
-        pedido = cliente.fazerPedido(restauranteA);
+        pedido = cliente.fazerPedido(restauranteA, listaItens);
     }
 
     @Test

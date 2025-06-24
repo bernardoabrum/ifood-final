@@ -1,6 +1,7 @@
 package pedido;
 
 import restaurante.Restaurante;
+import restaurante.item.IItem;
 import restaurante.item.Item;
 
 import java.util.List;
@@ -9,9 +10,11 @@ import java.util.Observable;
 public class Pedido extends Observable {
     private PedidoEstado pedidoEstado;
     private Restaurante restaurante;
-    private List<Item> listaItens;
+    private List<Item> itens;
+    private float total;
 
-    public Pedido(Restaurante restaurante) {
+    public Pedido(Restaurante restaurante, List<Item> itens) {
+        this.itens = itens;
         this.restaurante = restaurante;
     }
 
@@ -58,6 +61,21 @@ public class Pedido extends Observable {
 
     public void setRestaurante(Restaurante restaurante) {
         this.restaurante = restaurante;
+    }
+
+    public void setItens(List<Item> itens) {
+        this.itens = itens;
+    }
+
+    public String resumoPedido() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Resumo do pedido: ");
+        for (IItem item : this.itens) {
+            sb.append(item.getDescricao() + ", ");
+            total += item.getPreco();
+        }
+        sb.append("Total: R$ ").append(String.format("%.2f", total));
+        return sb.toString();
     }
 
     private void notificarMudanca() {

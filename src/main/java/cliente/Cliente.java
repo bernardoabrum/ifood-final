@@ -4,6 +4,8 @@ import pedido.Pedido;
 import pedido.PedidoEstadoEfetuado;
 import restaurante.Restaurante;
 import restaurante.RestauranteFactory;
+import restaurante.item.IItem;
+import restaurante.item.Item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,20 +30,21 @@ public abstract class Cliente implements Observer {
         this.proximoCliente = proximoCliente;
     }
 
-    public Pedido fazerPedido(Restaurante restaurante) {
-        Pedido pedido = new Pedido(restaurante);
+    public Pedido fazerPedido(Restaurante restaurante, List<Item> itens) {
+        Pedido pedido = new Pedido(restaurante, itens);
         pedido.addObserver(this);
         pedido.setPedidoEstado(PedidoEstadoEfetuado.getInstance());
         pedido.efetuarPedido();
+        pedido.setItens(itens);
         return pedido;
     }
 
-    public String validarPedido(Restaurante restaurante, Compra compra) {
+    public String validarPedido(Restaurante restaurante, Compra compra, List<Item> itens) {
         if (tipoCompras.contains(compra.getCompraAtual())) {
-            this.fazerPedido(restaurante);
+            this.fazerPedido(restaurante, itens);
             return "Compra validada";
         } else if (proximoCliente != null) {
-            return proximoCliente.validarPedido(restaurante, compra);
+            return proximoCliente.validarPedido(restaurante, compra, itens);
         } else {
             return "Desconto não autorizado";
         }

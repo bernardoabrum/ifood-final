@@ -18,7 +18,7 @@ public class DecoratorTest {
 
     @BeforeEach
     void setUp() {
-        item = new Item(20.0f);
+        item = new Item("Item1",20.0f);
     }
 
     @Test
