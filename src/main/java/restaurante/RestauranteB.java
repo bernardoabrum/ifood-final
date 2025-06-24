@@ -4,12 +4,12 @@ import pedido.Pedido;
 
 public class RestauranteB extends Restaurante {
 
-    public RestauranteB(float mediaValor) {
-        super(mediaValor);
+    public String getNome() {
+        return "RestauranteB";
     }
 
-    public float calcularMediaValor() {
-        return this.mediaValor * (1 + this.avaliacao.porcentagemAumento());
+    public float getMediaValor() {
+        return 400.00f;
     }
 
     public boolean aceitarPedido(Pedido pedido) {

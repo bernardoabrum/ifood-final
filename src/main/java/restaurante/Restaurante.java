@@ -5,22 +5,19 @@ import restaurante.avaliacao.IAvaliacao;
 
 public abstract class Restaurante {
 
-    protected IAvaliacao avaliacao;
-    protected float mediaValor;
+    protected abstract String getNome();
 
-    public Restaurante(float mediaValor) {
-        this.mediaValor = mediaValor;
-    }
+    protected IAvaliacao avaliacao;
+
+    protected abstract float getMediaValor();
 
     public void setAvaliacao(IAvaliacao avaliacao) {
         this.avaliacao = avaliacao;
     }
 
-    public void setMediaValor(float mediaValor) {
-        this.mediaValor = mediaValor;
+    public float calcularMediaValor() {
+        return getMediaValor() * (1 + avaliacao.porcentagemAumento());
     }
-
-    public abstract float calcularMediaValor();
 
     public abstract boolean aceitarPedido(Pedido pedido);
 

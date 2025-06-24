@@ -7,7 +7,7 @@ public class RestauranteFactory {
         Object objeto = null;
 
         try {
-            classe = Class.forName("restaurante" + restaurante);
+            classe = Class.forName("restaurante.Restaurante" + restaurante);
             objeto = classe.newInstance();
         } catch (Exception e) {
             throw new IllegalArgumentException("Restaurante inexistente");
