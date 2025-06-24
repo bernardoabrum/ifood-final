@@ -1,10 +1,14 @@
 package pedido;
 
-public class Pedido {
-    private PedidoEstado pedidoEstado;
+import restaurante.Restaurante;
+import java.util.Observable;
 
-    public Pedido() {
-        this.pedidoEstado = PedidoEstadoEfetuado.getInstance();
+public class Pedido extends Observable {
+    private PedidoEstado pedidoEstado;
+    private Restaurante restaurante;
+
+    public Pedido(Restaurante restaurante) {
+        this.restaurante = restaurante;
     }
 
     public void setPedidoEstado(PedidoEstado pedidoEstado) {
@@ -41,5 +45,18 @@ public class Pedido {
 
     public PedidoEstado getPedidoEstado() {
         return pedidoEstado;
+    }
+
+    public Restaurante getRestaurante() {
+        return restaurante;
+    }
+
+    public void setRestaurante(Restaurante restaurante) {
+        this.restaurante = restaurante;
+    }
+
+    private void notificarMudanca() {
+        setChanged();
+        notifyObservers("Estado do pedido: " + pedidoEstado.getEstadoPedido() + " (por " + restaurante.getNome() + ")");
     }
 }

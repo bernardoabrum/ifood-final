@@ -5,7 +5,7 @@ import restaurante.avaliacao.IAvaliacao;
 
 public abstract class Restaurante {
 
-    protected abstract String getNome();
+    public abstract String getNome();
 
     protected IAvaliacao avaliacao;
 
