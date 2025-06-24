@@ -27,7 +27,7 @@ public class ObserverTest {
     @Test
     void deveAtualizarEstadoNotificacaoEfetuado() {
         Cliente cliente = new Cliente("ClienteA");
-        cliente.fazerPedido("A");
+        Pedido pedido = cliente.fazerPedido("A");
         assertEquals(null, cliente.getUltimaNotificacao());
     }
 }

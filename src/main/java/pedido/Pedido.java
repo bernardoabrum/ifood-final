@@ -46,6 +46,7 @@ public class Pedido extends Observable {
 
     public void setPedidoEstado(PedidoEstado pedidoEstado) {
         this.pedidoEstado = pedidoEstado;
+        notificarMudanca();
     }
 
     public Restaurante getRestaurante() {
