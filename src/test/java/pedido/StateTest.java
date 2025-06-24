@@ -9,11 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
 public class StateTest {
 
     private Pedido pedido;
-    private Cliente cliente;
 
     @BeforeEach
     public void setUp() {
-        cliente = new Cliente("Renzo");
+        Cliente cliente = new Cliente("Renzo");
         pedido = cliente.fazerPedido("A");
     }
 
