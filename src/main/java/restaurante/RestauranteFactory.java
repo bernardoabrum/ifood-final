@@ -1,6 +1,11 @@
 package restaurante;
 
 public class RestauranteFactory {
+    private RestauranteFactory() {}
+    private static RestauranteFactory instance = new RestauranteFactory();
+    public static RestauranteFactory getInstance() {
+        return instance;
+    }
 
     public static Restaurante obterRestaurante(String restaurante) {
         Class classe = null;
