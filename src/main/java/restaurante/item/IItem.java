@@ -8,6 +8,4 @@ public interface IItem {
     List<String> getIngredienteAdicionado();
 
     List<String> getIngredienteRemovido();
-
-    String getDescricao();
 }

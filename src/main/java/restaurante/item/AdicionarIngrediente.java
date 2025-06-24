@@ -18,8 +18,4 @@ public class AdicionarIngrediente extends ItemDecorator {
     public float getNovoPreco() {
         return getItem().getPreco() + (3.0f * ingrediente.size());
     }
-
-    public String getDescricao() {
-        return ingrediente.toString();
-    }
 }

@@ -18,8 +18,4 @@ public class RemoverIngrediente extends ItemDecorator {
     public float getNovoPreco() {
         return getItem().getPreco();
     }
-
-    public String getDescricao() {
-        return ingrediente.toString();
-    }
 }

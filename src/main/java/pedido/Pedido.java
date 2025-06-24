@@ -70,7 +70,7 @@ public class Pedido extends Observable {
     public String resumoPedido() {
         StringBuilder sb = new StringBuilder();
         sb.append("Resumo do pedido: ");
-        for (IItem item : this.itens) {
+        for (Item item : this.itens) {
             sb.append(item.getDescricao() + ", ");
             total += item.getPreco();
         }
