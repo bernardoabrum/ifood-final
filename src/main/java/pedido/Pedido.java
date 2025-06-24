@@ -59,6 +59,6 @@ public class Pedido extends Observable {
 
     private void notificarMudanca() {
         setChanged();
-        notifyObservers("Estado do pedido: " + pedidoEstado.getEstadoPedido() + " (por " + restaurante.getNome() + ")");
+        notifyObservers("o estado do pedido foi alterado para: " + pedidoEstado.getEstadoPedido() + " , por " + restaurante.getNome());
     }
 }
