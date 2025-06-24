@@ -3,6 +3,8 @@ package cliente;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pedido.*;
+import restaurante.Restaurante;
+import restaurante.RestauranteFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,16 +12,18 @@ public class ObserverTest {
 
     private Pedido pedido;
     private Cliente cliente;
+    Restaurante restauranteA;
 
     @BeforeEach
     public void setUp() {
+        restauranteA = RestauranteFactory.obterRestaurante("A");
         cliente = new ClienteComum("Renzo");
-        pedido = cliente.fazerPedido("A");
+        pedido = cliente.fazerPedido(restauranteA);
     }
 
     @Test
     void deveAtualizarEstadoNotificacaoEfetuado() {
-        cliente.fazerPedido("A");
+        cliente.fazerPedido(restauranteA);
         assertEquals("Renzo, o estado do pedido foi alterado para: Pedido efetuado, por RestauranteA", cliente.getUltimaNotificacao());
     }
 

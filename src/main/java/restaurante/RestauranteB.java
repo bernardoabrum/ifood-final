@@ -1,6 +1,7 @@
 package restaurante;
 
 import pedido.Pedido;
+import restaurante.avaliacao.IAvaliacao;
 
 public class RestauranteB extends Restaurante {
 

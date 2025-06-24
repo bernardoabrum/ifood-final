@@ -1,12 +1,15 @@
 package pedido;
 
 import restaurante.Restaurante;
+import restaurante.item.Item;
 
+import java.util.List;
 import java.util.Observable;
 
 public class Pedido extends Observable {
     private PedidoEstado pedidoEstado;
     private Restaurante restaurante;
+    private List<Item> listaItens;
 
     public Pedido(Restaurante restaurante) {
         this.restaurante = restaurante;

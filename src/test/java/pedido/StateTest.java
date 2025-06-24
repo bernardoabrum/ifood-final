@@ -4,17 +4,21 @@ import cliente.Cliente;
 import cliente.ClienteComum;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import restaurante.Restaurante;
+import restaurante.RestauranteFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StateTest {
 
     private Pedido pedido;
+    Restaurante restauranteA;
 
     @BeforeEach
     public void setUp() {
+        restauranteA = RestauranteFactory.obterRestaurante("A"); restauranteA = RestauranteFactory.obterRestaurante("A");
         Cliente cliente = new ClienteComum("Renzo");
-        pedido = cliente.fazerPedido("A");
+        pedido = cliente.fazerPedido(restauranteA);
     }
 
     @Test

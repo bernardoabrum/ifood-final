@@ -28,8 +28,7 @@ public abstract class Cliente implements Observer {
         this.proximoCliente = proximoCliente;
     }
 
-    public Pedido fazerPedido(String restauranteNome) {
-        Restaurante restaurante = RestauranteFactory.obterRestaurante(restauranteNome);
+    public Pedido fazerPedido(Restaurante restaurante) {
         Pedido pedido = new Pedido(restaurante);
         pedido.addObserver(this);
         pedido.setPedidoEstado(PedidoEstadoEfetuado.getInstance());
@@ -37,12 +36,12 @@ public abstract class Cliente implements Observer {
         return pedido;
     }
 
-    public String validarPedido(String restauranteNome, Compra compra) {
+    public String validarPedido(Restaurante restaurante, Compra compra) {
         if (tipoCompras.contains(compra.getCompraAtual())) {
-            this.fazerPedido(restauranteNome);
-            return "Pedido realizado";
+            this.fazerPedido(restaurante);
+            return "Compra validada";
         } else if (proximoCliente != null) {
-            return proximoCliente.validarPedido(restauranteNome, compra);
+            return proximoCliente.validarPedido(restaurante, compra);
         } else {
             return "Desconto não autorizado";
         }

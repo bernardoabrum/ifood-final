@@ -7,9 +7,13 @@ public abstract class Restaurante {
 
     public abstract String getNome();
 
-    protected IAvaliacao avaliacao;
+    public IAvaliacao avaliacao;
 
-    protected abstract float getMediaValor();
+    public abstract float getMediaValor();
+
+    public IAvaliacao getAvaliacao() {
+        return avaliacao;
+    };
 
     public void setAvaliacao(IAvaliacao avaliacao) {
         this.avaliacao = avaliacao;
