@@ -1,6 +1,7 @@
 package pedido;
 
 import restaurante.Restaurante;
+
 import java.util.Observable;
 
 public class Pedido extends Observable {
@@ -9,10 +10,6 @@ public class Pedido extends Observable {
 
     public Pedido(Restaurante restaurante) {
         this.restaurante = restaurante;
-    }
-
-    public void setPedidoEstado(PedidoEstado pedidoEstado) {
-        this.pedidoEstado = pedidoEstado;
     }
 
     public boolean efetuarPedido() {
@@ -45,6 +42,10 @@ public class Pedido extends Observable {
 
     public PedidoEstado getPedidoEstado() {
         return pedidoEstado;
+    }
+
+    public void setPedidoEstado(PedidoEstado pedidoEstado) {
+        this.pedidoEstado = pedidoEstado;
     }
 
     public Restaurante getRestaurante() {
