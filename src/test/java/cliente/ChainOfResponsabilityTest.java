@@ -27,7 +27,6 @@ public class ChainOfResponsabilityTest {
     @Test
     public void ProximoClienteDeveRealizarPedidoComDesconto() {
         Compra compra1 = new Compra(ComDesconto.getInstance());
-        compra1.setCompraAtual(ComDesconto.getInstance());
         assertEquals("Pedido realizado", clienteComum.validarPedido("A", compra1));
     }
 

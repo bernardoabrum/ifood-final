@@ -1,0 +1,8 @@
+restaurante\FactoryTest.class
+cliente\ChainOfResponsabilityTest$1.class
+restaurante\SingletonTest.class
+cliente\ChainOfResponsabilityTest.class
+restaurante\DecoratorTest.class
+cliente\ObserverTest.class
+pedido\StateTest.class
+restaurante\BridgeTest.class
