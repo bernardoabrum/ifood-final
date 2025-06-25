@@ -9,7 +9,7 @@ import restaurante.avaliacao.UmaEstrela;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BridgeTest {
+public class RestauranteTest {
 
     private Restaurante restauranteA;
     private Restaurante restauranteB;
@@ -72,5 +72,33 @@ public class BridgeTest {
         assertEquals(400.0f, restauranteB.getMediaValor());
         restauranteB.setAvaliacao(avaliacao);
         assertEquals(520.0f, restauranteB.calcularMediaValor(), 0.01f);
+    }
+
+    @Test
+    void deveRetornarExcecaoParaRestauranteInexistente() {
+        try {
+            Restaurante restaurante = RestauranteFactory.obterRestaurante("D");
+            fail();
+        } catch (IllegalArgumentException e) {
+            assertEquals("Restaurante inexistente", e.getMessage());
+        }
+    }
+
+    @Test
+    void deveRetornarExcecaoParaRestauranteInvalido() {
+        try {
+            Restaurante restaurante = RestauranteFactory.obterRestaurante("C");
+            fail();
+        } catch (IllegalArgumentException e) {
+            assertEquals("Restaurante inválido", e.getMessage());
+        }
+    }
+
+    @Test
+    public void deveCriarInstanciaDeRestauranteA() {
+        RestauranteFactory factory = RestauranteFactory.getInstance();
+        Restaurante restaurante = factory.obterRestaurante("A");
+        assertNotNull(restaurante);
+        assertInstanceOf(Restaurante.class, restaurante);
     }
 }

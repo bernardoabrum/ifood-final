@@ -1,13 +1,11 @@
-package fluxo;
+package pedido;
 
 import cliente.*;
-import pedido.*;
 import restaurante.*;
 import restaurante.item.*;
 import restaurante.avaliacao.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.List;
 

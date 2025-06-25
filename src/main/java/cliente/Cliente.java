@@ -3,10 +3,7 @@ package cliente;
 import pedido.Pedido;
 import pedido.PedidoEstadoEfetuado;
 import restaurante.Restaurante;
-import restaurante.RestauranteFactory;
-import restaurante.item.IItem;
 import restaurante.item.Item;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;

@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ObserverTest {
+public class ClienteTest {
 
     private Pedido pedido;
     private Cliente cliente;

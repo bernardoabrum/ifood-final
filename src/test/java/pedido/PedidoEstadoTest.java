@@ -7,13 +7,12 @@ import org.junit.jupiter.api.Test;
 import restaurante.Restaurante;
 import restaurante.RestauranteFactory;
 import restaurante.item.Item;
-
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class StateTest {
+public class PedidoEstadoTest {
 
     private Pedido pedido;
     Restaurante restauranteA;

@@ -1,9 +1,7 @@
 package pedido;
 
 import restaurante.Restaurante;
-import restaurante.item.IItem;
 import restaurante.item.Item;
-
 import java.util.List;
 import java.util.Observable;
 

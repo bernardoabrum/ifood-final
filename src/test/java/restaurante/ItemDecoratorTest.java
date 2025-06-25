@@ -6,13 +6,12 @@ import restaurante.item.AdicionarIngrediente;
 import restaurante.item.IItem;
 import restaurante.item.Item;
 import restaurante.item.RemoverIngrediente;
-
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class DecoratorTest {
+public class ItemDecoratorTest {
 
     private IItem item;
 
